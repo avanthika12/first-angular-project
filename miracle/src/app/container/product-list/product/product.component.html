@@ -1,0 +1,18 @@
+<div class="miracle-product-list">
+    <div class="miracle-product-item" >
+        <div class="miracle-wishlist-sale-container">
+            <div class="miracle-add-to-wishlist">
+                <i class="fa fa-heart-o"></i>
+            </div>
+            <div class="miracle-on-sale-tag" *ngIf="product.discountPrice">{{(100-(product.discountPrice/product.price * 100)).toFixed(0)}}% OFF</div>
+            <div class="miracle-product-image">
+                <img [src]="product.imageURL" alt="{{product.name}}">
+            </div>
+            <div class="miracle-add-to-price">{{product.price}}</div>
+            <div class="miracle-product-name">{{product.name}}</div>
+            <div class="miracle-product-category">{{product.gender}} . {{product.category}} . {{product.brand}}</div>
+            <div class="miracle-product-available-colors">{{product.color.length}} Colors</div>
+            <div class="miracle-product-in-stock" [ngStyle]="{ fontWeight:'bold', color : product.is_in_inventory? 'Green' : 'Red'}">{{product.is_in_inventory ? 'Available in Stock' : 'Not Available in Stock'}}</div>
+        </div>
+    </div>
+</div>
